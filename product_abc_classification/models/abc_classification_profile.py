@@ -86,7 +86,7 @@ class ABCClassificationProfile(models.Model):
 
     def action_view_products(self):
         products = self.mapped("product_variant_ids")
-        action = self.env["ir.actions.actions"].for_xml_id(
+        action = self.env["ir.actions.actions"]._for_xml_id(
             "product.product_variant_action"
         )
         del action["context"]
